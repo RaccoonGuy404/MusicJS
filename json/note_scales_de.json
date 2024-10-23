@@ -1,0 +1,26 @@
+{
+    "Dur": {
+        "C": "C, D, E, F♯, G, A, B, C"
+    },
+    "Moll": {
+        "C": "C, D, E♭, F, G, A♭, B♭, C"
+    },
+    "Harmonisch Moll": {
+        "C": "C, D, E♭, F, G, A♭, B, C"
+    },
+    "Melodisch Moll": {
+        "C": "C, D, E♭, F, G, A, B, C"
+    },
+    "Lydisch": {
+        "C": "C, D, E, F♯, G, A, B, C"
+    },
+    "Mixolydisch": {
+        "C": "C, D, E, F, G, A, B♭, C"
+    },
+    "Phrygisch": {
+        "C": "C, D♭, E♭, F, G, A♭, B♭, C"
+    },
+    "Oktatonisch": {
+        "C": "C, D♭, E♭, E, F♯, G, A, B♭, C"
+    }
+}

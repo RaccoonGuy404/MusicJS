@@ -1,0 +1,26 @@
+table {
+    border:1px solid black;
+    table-layout: fixed;
+}
+
+td {
+    border: 1px solid black;
+    width: 60px;
+    padding: 1em;
+}
+
+.C {
+    background-color: Red;
+}
+
+.E, .G {
+    background-color: lime;
+}
+
+.D, .F {
+    background-color: blue;
+}
+
+.A, .B {
+    background-color: orange;
+}
