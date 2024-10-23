@@ -6,41 +6,27 @@ export function ghost() {
     console.log('BOOOH!')
 }
 
-export function genString(tuning, string, notes) {
-    notes = tuneString(tuning, notes)
-
+export function genFretboard(string, tuning, notes) {
+    //  console.log(string, tuning, notes)
+    //  console.log(notes)
+    //  console.log(tuned_notes)
+    let tuned_notes = tuneString(tuning, notes)
+        
+    //  repetitions for fret length
     let repetitions = 0
-    do {
-        for (let note in notes) {
-            let tab = document.createElement('td')
+    do  {   
+            for(let note in tuned_notes) {
+                let tab = document.createElement('td')
+                
+                tab.classList.add(tuned_notes[note])                
+                tab.innerHTML = tuned_notes[note]
 
-            tab.classList.add(notes[note])
+                string.appendChild(tab)
+                //  console.log(typeof string.appendChild(tab))
+            } repetitions++
+        } while (repetitions < 2)
+    }
 
-            tab.innerHTML = notes[note]
-    
-            switch (string) {
-                case 'string_1':
-                    string_1.appendChild(tab)
-                    break;
-                case 'string_2':
-                    string_2.appendChild(tab)
-                    break;
-                case 'string_3':
-                    string_3.appendChild(tab)
-                    break;
-                case 'string_4':
-                    string_4.appendChild(tab)
-                    break;
-                case 'string_5':
-                    string_5.appendChild(tab)
-                    break;
-                default:
-                    string_6.appendChild(tab)
-                    break;
-            }
-        } repetitions++
-    } while (repetitions < 2)
-}
 
 function tuneString(note, notes) {
     let  firstHalf = notes.slice(0, notes.indexOf(note))
@@ -48,8 +34,4 @@ function tuneString(note, notes) {
 
     let newRoot = secondHalf.concat(firstHalf)
     return newRoot
-}
-
-export function genFretboard() {
-    
 }

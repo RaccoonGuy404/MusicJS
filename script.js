@@ -7,9 +7,9 @@ const string_4 = document.getElementById('string_4')
 const string_5 = document.getElementById('string_5')
 const string_6 = document.getElementById('string_6')
 
-let strings = [string_1, string_2, string_3, string_4, string_5, string_6]
+let strings = [string_6, string_5, string_4, string_3, string_2, string_1]
 
-let tuning = ['E', 'A', 'D', 'B', 'G', 'E']
+let tuning = ['E', 'A', 'D', 'G', 'B', 'E']
 
 let notes
 let notation = 'sharp'
@@ -33,12 +33,9 @@ async function loadScales() {
 
 setTimeout(() => {
 
-    htmlGen.genFretboard(strings, tuning)
-
-    htmlGen.genString('E', 'string_1', notes)
-    htmlGen.genString('B', 'string_2', notes)
-    htmlGen.genString('G', 'string_3', notes)
-    htmlGen.genString('D', 'string_4', notes)
-    htmlGen.genString('A', 'string_5', notes)
-    htmlGen.genString('E', 'string_6', notes)
+    //  htmlGen.genFretboard(strings[0], tuning[0], notes)
+    for (let string in strings) {
+        //  console.log(strings[string], string, tuning[string], tuning)
+        htmlGen.genFretboard(strings[string], tuning[string], notes)
+    }
 }, 200);
