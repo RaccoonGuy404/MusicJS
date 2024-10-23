@@ -12,7 +12,7 @@ export function genFretboard(string, tuning, notes) {
     //  console.log(tuned_notes)
     let tuned_notes = tuneString(tuning, notes)
         
-    //  repetitions for fret length
+    //  repetitions for fretboard length
     let repetitions = 0
     do  {   
             for(let note in tuned_notes) {
@@ -20,6 +20,7 @@ export function genFretboard(string, tuning, notes) {
                 
                 tab.classList.add(tuned_notes[note])                
                 tab.innerHTML = tuned_notes[note]
+                tab.classList.add(string.id, `tab-${note}`)
 
                 string.appendChild(tab)
                 //  console.log(typeof string.appendChild(tab))

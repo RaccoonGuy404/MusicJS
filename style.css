@@ -1,4 +1,6 @@
 table {
+    margin: auto;
+    margin-top: 5em;
     border:1px solid black;
     table-layout: fixed;
 }
@@ -7,4 +9,12 @@ td {
     border: 1px solid black;
     width: 60px;
     padding: 1em;
+}
+
+.tab-0, .tab-3, .tab-5, .tab-7, .tab-9 {
+    background-color: #AAAAAA;
+}
+
+.C_major_scale {
+    background-color: tomato;
 }

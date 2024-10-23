@@ -1,4 +1,5 @@
 import * as htmlGen from '/scripts/html_generation.js'
+import * as template from '/scripts/templates.js'
 
 const string_1 = document.getElementById('string_1')
 const string_2 = document.getElementById('string_2')
@@ -32,10 +33,17 @@ async function loadScales() {
     }
 
 setTimeout(() => {
+    console.log(scales)
 
-    //  htmlGen.genFretboard(strings[0], tuning[0], notes)
-    for (let string in strings) {
-        //  console.log(strings[string], string, tuning[string], tuning)
-        htmlGen.genFretboard(strings[string], tuning[string], notes)
+    for (let scale in scales) {
+        console.log(scale)
     }
+
+    template.majorScale(scales['Major'], 'C', notes)
 }, 200);
+
+//  htmlGen.genFretboard(strings[0], tuning[0], notes)
+for (let string in strings) {
+    //  console.log(strings[string], string, tuning[string], tuning)
+    htmlGen.genFretboard(strings[string], tuning[string], notes)
+}
