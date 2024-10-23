@@ -15,6 +15,62 @@ td {
     background-color: #AAAAAA;
 }
 
-.C_major_scale {
-    background-color: tomato;
+.root {
+    background-color: #9B59B6;
+}
+
+.second {
+    background-color: #AE74C1;
+}
+
+.third {
+    background-color: #C28FCD;
+}
+
+.fourth {
+    background-color: #D5AAD8;
+}
+
+.fifth {
+    background-color: #E8C5E4;
+}
+
+.sixth {
+    background-color: #F3D98F;
+}
+
+.seventh {
+    background-color: #F7E29B;
+}
+
+
+
+
+
+.root {
+    background-color: #3498DB; /* sanftes Blau */
+}
+
+.second {
+    background-color: #5AAEDB; /* helleres Blau */
+}
+
+.third {
+    background-color: #7FC3DA; /* zartes Blau */
+}
+
+.fourth {
+    background-color: #A4D9B8; /* weiches Türkis */
+}
+
+.fifth {
+    background-color: #C9EE96; /* sanftes Hellgrün */
+}
+
+.sixth {
+    background-color: #F0B06A; /* helles Orange */
+}
+
+.seventh {
+    background-color: #F39C4D; /* warmes Orange */
 }

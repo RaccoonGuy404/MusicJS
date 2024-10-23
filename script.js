@@ -33,13 +33,13 @@ async function loadScales() {
     }
 
 setTimeout(() => {
-    console.log(scales)
+    //  console.log(scales)
 
     for (let scale in scales) {
-        console.log(scale)
+        //  console.log(scale)
     }
 
-    template.majorScale(scales['Major'], 'C', notes)
+    template.majorScale(scales['Major'], 'C')
 }, 200);
 
 //  htmlGen.genFretboard(strings[0], tuning[0], notes)
