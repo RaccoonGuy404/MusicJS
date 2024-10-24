@@ -1,3 +1,7 @@
+html {
+    background-color: #333333;
+}
+
 #mode_key_selection {
     width: max-content;
     margin: auto;
@@ -12,6 +16,7 @@ table {
 }
 
 td {
+    background-color: white;
     border: 1px solid black;
     width: 60px;
     padding: 1em;

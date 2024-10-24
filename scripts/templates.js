@@ -2,7 +2,7 @@ import { changeNotation } from "./html_generation.js"
 
 const Intervals = [ 'root', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
 
-const scale_modes = ['Major', 'Minor', 'Harmonic_Minor', 'Melodic_Minor', 'Lydian', 'Myxolydian', 'Phrygian', 'Locrian']
+const scale_modes = ['Major', 'Minor', 'Harmonic_Minor', 'Melodic_Minor', 'Lydian', 'Mixolydian', 'Phrygian', 'Locrian']
 
 export function candys() {
     console.log('treak or treat!')
@@ -56,9 +56,9 @@ export function deleteTags() {
 
     scale_modes.forEach(scale => {
         let notes = Array.from(document.querySelectorAll(`[class*="${scale}"]`))
-        console.log(notes)
+        //  console.log(notes)
         notes.forEach(note => {
-            console.log(note)
+            //  console.log(note)
             note.classList.forEach(className => {
                 if (className.includes(scale) || className.endsWith('_')) {
                     note.classList.remove(className)

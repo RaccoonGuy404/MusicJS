@@ -184,39 +184,39 @@
             "notes": ["G", "A", "B", "C#", "D", "E", "F#"]
         }
     ],
-    "Myxolydian": [
+    "Mixolydian": [
         {
-            "name": "Myxolydian",
+            "name": "Mixolydian",
             "key": "A",
             "notes": ["A", "B", "C#", "D", "E", "F#", "G"]
         },
         {
-            "name": "Myxolydian",
+            "name": "Mixolydian",
             "key": "B",
             "notes": ["B", "C#", "D#", "E", "F#", "G#", "A"]
         },
         {
-            "name": "Myxolydian",
+            "name": "Mixolydian",
             "key": "C",
             "notes": ["C", "D", "E", "F", "G", "A", "Bb"]
         },
         {
-            "name": "Myxolydian",
+            "name": "Mixolydian",
             "key": "D",
             "notes": ["D", "E", "F#", "G", "A", "B", "C"]
         },
         {
-            "name": "Myxolydian",
+            "name": "Mixolydian",
             "key": "E",
             "notes": ["E", "F#", "G#", "A", "B", "C#", "D"]
         },
         {
-            "name": "Myxolydian",
+            "name": "Mixolydian",
             "key": "F",
             "notes": ["F", "G", "A", "Bb", "C", "D", "E"]
         },
         {
-            "name": "Myxolydian",
+            "name": "Mixolydian",
             "key": "G",
             "notes": ["G", "A", "B", "C", "D", "E", "F"]
         }
@@ -272,12 +272,12 @@
         {
             "name": "Locrian",
             "key": "C",
-            "notes": ["C", "Db", "Eb", "F", "G", "Ab", "Bb"]
+            "notes": ["C", "Db", "Eb", "F", "Gb", "Ab", "Bb"]
         },
         {
             "name": "Locrian",
             "key": "D",
-            "notes": ["D", "Eb", "F", "G", "A", "Bb", "C"]
+            "notes": ["D", "Eb", "F", "G", "Ab", "Bb", "C"]
         },
         {
             "name": "Locrian",
@@ -287,12 +287,12 @@
         {
             "name": "Locrian",
             "key": "F",
-            "notes": ["F", "Gb", "Ab", "B", "C", "Db", "Eb"]
+            "notes": ["F", "Gb", "Ab", "Bb", "C", "Db", "Eb"]
         },
         {
             "name": "Locrian",
             "key": "G",
             "notes": ["G", "Ab", "Bb", "C", "Db", "Eb", "F"]
-        }
+        }  
     ]
 }
