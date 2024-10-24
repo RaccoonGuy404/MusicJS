@@ -3,54 +3,296 @@
         {
             "name": "Major",
             "key": "A",
-            "notes": ["A", "B", "C#", "D", "E", "F#", "G#", "A"]
+            "notes": ["A", "B", "C#", "D", "E", "F#", "G#"]
         },
         {
             "name": "Major",
             "key": "B",
-            "notes": ["B", "C#", "D#", "E", "F#", "G#", "A#", "B"]
+            "notes": ["B", "C#", "D#", "E", "F#", "G#", "A#"]
         },
         {
             "name": "Major",
             "key": "C",
-            "notes" : ["C", "D", "E", "F", "G", "A", "B", "C"]
+            "notes" : ["C", "D", "E", "F", "G", "A", "B"]
         },
         {
             "name": "Major",
             "key": "D",
-            "notes": ["D", "E", "F#", "G", "A", "B", "C#", "D"]
+            "notes": ["D", "E", "F#", "G", "A", "B", "C#"]
         },
         {
             "name": "Major",
             "key": "E",
-            "notes": ["E", "F#", "G#", "A", "B", "C#", "D#", "E"]
+            "notes": ["E", "F#", "G#", "A", "B", "C#", "D#"]
         },
         {
             "name": "Major",
             "key": "F",
-            "notes": ["F", "G", "A", "Bb", "C", "D", "E", "F"]
+            "notes": ["F", "G", "A", "Bb", "C", "D", "E"]
         },
         {
             "name": "Major",
             "key": "G",
-            "notes": ["G", "A", "B", "C", "D", "E", "F#", "G"]
+            "notes": ["G", "A", "B", "C", "D", "E", "F#"]
         }        
     ],
     "Minor": [
         {
             "name": "Minor",
+            "key": "A",
+            "notes": ["A", "B", "C", "D", "E", "F", "G"]
+        },
+        {
+            "name": "Minor",
+            "key": "B",
+            "notes": ["B", "C#", "D", "E", "F#", "G", "A"]
+        },
+        {
+            "name": "Minor",
             "key": "C",
-            "notes" : ["C", "D", "E", "F", "G", "A", "B", "C"]
+            "notes": ["C", "D", "Eb", "F", "G", "Ab", "Bb"]
         },
         {
             "name": "Minor",
             "key": "D",
-            "notes" : ["C", "D", "E", "F", "G", "A", "B", "C"]
+            "notes": ["D", "E", "F", "G", "A", "Bb", "C"]
         },
         {
             "name": "Minor",
             "key": "E",
-            "notes" : ["C", "D", "E", "F", "G", "A", "B", "C"]
+            "notes": ["E", "F#", "G", "A", "B", "C", "D"]
+        },
+        {
+            "name": "Minor",
+            "key": "F",
+            "notes": ["F", "G", "Ab", "Bb", "C", "Db", "Eb"]
+        },
+        {
+            "name": "Minor",
+            "key": "G",
+            "notes": ["G", "A", "Bb", "C", "D", "Eb", "F"]
+        }    
+    ],
+    "Harmonic_Minor": [
+        {
+            "name": "Harmonic_Minor",
+            "key": "A",
+            "notes": ["A", "B", "C", "D", "E", "F", "G#"]
+        },
+        {
+            "name": "Harmonic_Minor",
+            "key": "B",
+            "notes": ["B", "C#", "D", "E", "F#", "G", "A#"]
+        },
+        {
+            "name": "Harmonic_Minor",
+            "key": "C",
+            "notes": ["C", "D", "Eb", "F", "G", "Ab", "B"]
+        },
+        {
+            "name": "Harmonic_Minor",
+            "key": "D",
+            "notes": ["D", "E", "F", "G", "A", "Bb", "C#"]
+        },
+        {
+            "name": "Harmonic_Minor",
+            "key": "E",
+            "notes": ["E", "F#", "G", "A", "B", "C", "D#"]
+        },
+        {
+            "name": "Harmonic_Minor",
+            "key": "F",
+            "notes": ["F", "G", "Ab", "Bb", "C", "Db", "E"]
+        },
+        {
+            "name": "Harmonic_Minor",
+            "key": "G",
+            "notes": ["G", "A", "Bb", "C", "D", "Eb", "F#"]
+        }
+    ],
+    "Melodic_Minor": [
+        {
+            "name": "Melodic_Minor",
+            "key": "A",
+            "notes": ["A", "B", "C", "D", "E", "F#", "G#"]
+        },
+        {
+            "name": "Melodic_Minor",
+            "key": "B",
+            "notes": ["B", "C#", "D", "E", "F#", "G#", "A#"]
+        },
+        {
+            "name": "Melodic_Minor",
+            "key": "C",
+            "notes": ["C", "D", "Eb", "F", "G", "A", "B"]
+        },
+        {
+            "name": "Melodic_Minor",
+            "key": "D",
+            "notes": ["D", "E", "F", "G", "A", "B", "C#"]
+        },
+        {
+            "name": "Melodic_Minor",
+            "key": "E",
+            "notes": ["E", "F#", "G", "A", "B", "C#", "D#"]
+        },
+        {
+            "name": "Melodic_Minor",
+            "key": "F",
+            "notes": ["F", "G", "Ab", "Bb", "C", "D", "E"]
+        },
+        {
+            "name": "Melodic_Minor",
+            "key": "G",
+            "notes": ["G", "A", "Bb", "C", "D", "E", "F#"]
+        }
+    ],
+    "Lydian": [
+        {
+            "name": "Lydian",
+            "key": "A",
+            "notes": ["A", "B", "C#", "D#", "E", "F#", "G#"]
+        },
+        {
+            "name": "Lydian",
+            "key": "B",
+            "notes": ["B", "C#", "D#", "E#", "F#", "G#", "A#"]
+        },
+        {
+            "name": "Lydian",
+            "key": "C",
+            "notes": ["C", "D", "E", "F#", "G", "A", "B"]
+        },
+        {
+            "name": "Lydian",
+            "key": "D",
+            "notes": ["D", "E", "F#", "G#", "A", "B", "C#"]
+        },
+        {
+            "name": "Lydian",
+            "key": "E",
+            "notes": ["E", "F#", "G#", "A#", "B", "C#", "D#"]
+        },
+        {
+            "name": "Lydian",
+            "key": "F",
+            "notes": ["F", "G", "A", "B", "C", "D", "E"]
+        },
+        {
+            "name": "Lydian",
+            "key": "G",
+            "notes": ["G", "A", "B", "C#", "D", "E", "F#"]
+        }
+    ],
+    "Myxolydian": [
+        {
+            "name": "Myxolydian",
+            "key": "A",
+            "notes": ["A", "B", "C#", "D", "E", "F#", "G"]
+        },
+        {
+            "name": "Myxolydian",
+            "key": "B",
+            "notes": ["B", "C#", "D#", "E", "F#", "G#", "A"]
+        },
+        {
+            "name": "Myxolydian",
+            "key": "C",
+            "notes": ["C", "D", "E", "F", "G", "A", "Bb"]
+        },
+        {
+            "name": "Myxolydian",
+            "key": "D",
+            "notes": ["D", "E", "F#", "G", "A", "B", "C"]
+        },
+        {
+            "name": "Myxolydian",
+            "key": "E",
+            "notes": ["E", "F#", "G#", "A", "B", "C#", "D"]
+        },
+        {
+            "name": "Myxolydian",
+            "key": "F",
+            "notes": ["F", "G", "A", "Bb", "C", "D", "E"]
+        },
+        {
+            "name": "Myxolydian",
+            "key": "G",
+            "notes": ["G", "A", "B", "C", "D", "E", "F"]
+        }
+    ],
+    "Phrygian": [
+        {
+            "name": "Phrygian",
+            "key": "A",
+            "notes": ["A", "Bb", "C", "D", "E", "F", "G"]
+        },
+        {
+            "name": "Phrygian",
+            "key": "B",
+            "notes": ["B", "C", "D", "E", "F#", "G", "A"]
+        },
+        {
+            "name": "Phrygian",
+            "key": "C",
+            "notes": ["C", "Db", "Eb", "F", "G", "Ab", "Bb"]
+        },
+        {
+            "name": "Phrygian",
+            "key": "D",
+            "notes": ["D", "Eb", "F", "G", "A", "Bb", "C"]
+        },
+        {
+            "name": "Phrygian",
+            "key": "E",
+            "notes": ["E", "F", "G", "A", "B", "C", "D"]
+        },
+        {
+            "name": "Phrygian",
+            "key": "F",
+            "notes": ["F", "Gb", "Ab", "Bb", "C", "Db", "Eb"]
+        },
+        {
+            "name": "Phrygian",
+            "key": "G",
+            "notes": ["G", "Ab", "Bb", "C", "D", "Eb", "F"]
+        }
+    ],
+    "Locrian": [
+        {
+            "name": "Locrian",
+            "key": "A",
+            "notes": ["A", "Bb", "C", "Db", "E", "F", "G"]
+        },
+        {
+            "name": "Locrian",
+            "key": "B",
+            "notes": ["B", "C", "D", "E", "F", "G", "A"]
+        },
+        {
+            "name": "Locrian",
+            "key": "C",
+            "notes": ["C", "Db", "Eb", "F", "G", "Ab", "Bb"]
+        },
+        {
+            "name": "Locrian",
+            "key": "D",
+            "notes": ["D", "Eb", "F", "G", "A", "Bb", "C"]
+        },
+        {
+            "name": "Locrian",
+            "key": "E",
+            "notes": ["E", "F", "G", "A", "Bb", "C", "D"]
+        },
+        {
+            "name": "Locrian",
+            "key": "F",
+            "notes": ["F", "Gb", "Ab", "B", "C", "Db", "Eb"]
+        },
+        {
+            "name": "Locrian",
+            "key": "G",
+            "notes": ["G", "Ab", "Bb", "C", "Db", "Eb", "F"]
         }
     ]
 }

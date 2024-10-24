@@ -63,6 +63,7 @@ setTimeout(() => {
     m_k_change.forEach(function (elem) {
         elem.addEventListener('change', function() {
             //  console.log(key.value, mode.value)
+            template.deleteTags()
             template.scale(key.value, mode.value, scales)
         })
     })

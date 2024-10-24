@@ -32,7 +32,16 @@ export function genFretboard(string, tuning, notes) {
     }
 
 export function changeNotation(notation, notes) {
-    console.log(notation, notes)
+    //  console.log(notation, notes)
+
+    if (notes.length < 12) {
+        if (notes.some(note => note.includes('#'))) {
+            notes = notes_sharp
+        }
+        if (notes.some(note => note.includes('B'))) {
+            notes = notes_flat
+        }
+    }
 
     let retagNotes = Array()
 

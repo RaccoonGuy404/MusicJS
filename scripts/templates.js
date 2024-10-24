@@ -1,6 +1,8 @@
 import { changeNotation } from "./html_generation.js"
 
-const Intervals = { 'root': 0, 'second': 1, 'third': 2, 'fourth': 3, 'fifth': 4, 'sixth': 5, 'seventh': 6 }
+const Intervals = [ 'root', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
+
+const scale_modes = ['Major', 'Minor', 'Harmonic_Minor', 'Melodic_Minor', 'Lydian', 'Myxolydian', 'Phrygian', 'Locrian']
 
 export function candys() {
     console.log('treak or treat!')
@@ -8,55 +10,60 @@ export function candys() {
 
 export function scale(key, mode, scales) {
     //  console.log(key, mode, scales)
-    //  console.log(scales['Major'][0].key)
 
+    let scale_key = scales[mode].findIndex(scale => scale.key === key)
+    let class_groups = Array()
+
+    if (scales[mode][scale_key]['notes'].some(note => note.includes('#'))) {
+        //  console.log('wechsel zu sharp notation')
+        changeNotation('Sharp', scales[mode][scale_key]['notes'])
+    }
+    if (scales[mode][scale_key]['notes'].some(note => note.includes('b'))) {
+        //  console.log('wechsel zu flat notation')
+        changeNotation('Flat', scales[mode][scale_key]['notes'])
+    }
 
     for (let scale in scales) {
-        //console.log(scale)
+        //  console.log(scale)
         if (mode == scale) {
-            //console.log(scales[scale])
+            //  console.log(scales[scale])
             scales[scale].forEach(mode => {
                 //console.log(mode, mode['key'])
                 if (key == mode['key']) {
                     //  console.log(mode, mode['notes'])
-                    tagIntervals(mode['notes'])
-                    return mode
+                    mode['notes'].forEach(note => {
+                        //  console.log(note, `${mode['key']}_${mode['name']}`, Intervals[mode['notes'].indexOf(note)])
+                        class_groups.push(`${mode['key']}_${mode['name']}`)
+                        let scale_notes = Array.prototype.slice.call(document.getElementsByClassName(note))
+                        scale_notes.forEach(scale_note => {
+                            //  console.log(scale_note)
+                            scale_note.classList.add(`${mode['key']}_${mode['name']}`, Intervals[mode['notes'].indexOf(note)])
+                        })
+                    })
                 }
             })
         }
     }
 }
 
-function tagIntervals(notes) {
-    console.log(notes, Intervals)
-
-    if (notes.some(note => note.includes('#'))) {
-        changeNotation('Sharp', notes)
-    } else if (notes.some(note => note.includes('b'))) {
-        changeNotation('Flat', notes)
-    }
-
-    deleteTags() 
-    for (let interval in Intervals) {
+export function deleteTags() {
+    Intervals.forEach(interval => {
+        let notes = Array.from(document.getElementsByClassName(interval))
         notes.forEach(note => {
-            //  console.log(notes.indexOf(note), Intervals[interval])
-            if (notes.indexOf(note) == Intervals[interval]) {
-                //  console.log(note, interval)
-                let notes_on_fret = Array.prototype.slice.call(document.getElementsByClassName(note))
-                //  console.log(note, notes_on_fret)
-                notes_on_fret.forEach(fret_note => {
-                    fret_note.classList.add(interval)
-                })
-            }
+            note.classList.remove(interval)
         })
-    }
-}
+    })
 
-function deleteTags() {
-    for (let interval in Intervals) {
-        let toDeleteTags = Array.prototype.slice.call(document.getElementsByClassName(interval))
-        toDeleteTags.forEach(tag => {
-            tag.classList.remove(interval)
+    scale_modes.forEach(scale => {
+        let notes = Array.from(document.querySelectorAll(`[class*="${scale}"]`))
+        console.log(notes)
+        notes.forEach(note => {
+            console.log(note)
+            note.classList.forEach(className => {
+                if (className.includes(scale) || className.endsWith('_')) {
+                    note.classList.remove(className)
+                }
+            })
         })
-    }
+    })
 }
