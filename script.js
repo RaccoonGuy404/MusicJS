@@ -8,6 +8,11 @@ const string_4 = document.getElementById('string_4')
 const string_5 = document.getElementById('string_5')
 const string_6 = document.getElementById('string_6')
 
+const key = document.getElementById('key')
+const mode = document.getElementById('mode')
+let m_k_change = [key, mode]
+
+
 let strings = [string_6, string_5, string_4, string_3, string_2, string_1]
 
 let tuning = ['E', 'A', 'D', 'G', 'B', 'E']
@@ -22,24 +27,36 @@ if (notation = 'sharp') {
 }
 
 let scales = null
-loadScales()
 
-async function loadScales() {
-        const response = await fetch('json/note_scales_en.json')
-        const data = await response.json()
-    
-        scales = data
-        //  console.log('scales geladen: ', scales)
+var ajax = new XMLHttpRequest ()
+
+ajax.open("GET", "../json/sample.json", true)
+
+ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4 && ajax.status == 200) {
+        var daten = JSON.parse(ajax.responseText)
+        //  console.log(daten)
+        scales = daten
     }
+}
+
+ajax.send()
 
 setTimeout(() => {
     //  console.log(scales)
-
     for (let scale in scales) {
         //  console.log(scale)
     }
 
-    template.majorScale(scales['Major'], 'C')
+    template.scale(key.value, mode.value, scales)
+
+    m_k_change.forEach(function (elem) {
+        elem.addEventListener('change', function() {
+            //  console.log(key.value, mode.value)
+            template.scale(key.value, mode.value, scales)
+        })
+    })
+
 }, 200);
 
 //  htmlGen.genFretboard(strings[0], tuning[0], notes)

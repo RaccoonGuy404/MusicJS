@@ -1,0 +1,56 @@
+{
+    "Major": [
+        {
+            "name": "Major",
+            "key": "A",
+            "notes": ["A", "B", "C#", "D", "E", "F#", "G#", "A"]
+        },
+        {
+            "name": "Major",
+            "key": "B",
+            "notes": ["B", "C#", "D#", "E", "F#", "G#", "A#", "B"]
+        },
+        {
+            "name": "Major",
+            "key": "C",
+            "notes" : ["C", "D", "E", "F", "G", "A", "B", "C"]
+        },
+        {
+            "name": "Major",
+            "key": "D",
+            "notes": ["D", "E", "F#", "G", "A", "B", "C#", "D"]
+        },
+        {
+            "name": "Major",
+            "key": "E",
+            "notes": ["E", "F#", "G#", "A", "B", "C#", "D#", "E"]
+        },
+        {
+            "name": "Major",
+            "key": "F",
+            "notes": ["F", "G", "A", "Bb", "C", "D", "E", "F"]
+        },
+        {
+            "name": "Major",
+            "key": "G",
+            "notes": ["G", "A", "B", "C", "D", "E", "F#", "G"]
+        }        
+    ],
+    "Minor": [
+        {
+            "name": "Minor",
+            "key": "C",
+            "notes" : ["C", "D", "E", "F", "G", "A", "B", "C"]
+        },
+        {
+            "name": "Minor",
+            "key": "D",
+            "notes" : ["C", "D", "E", "F", "G", "A", "B", "C"]
+        },
+        {
+            "name": "Minor",
+            "key": "E",
+            "notes" : ["C", "D", "E", "F", "G", "A", "B", "C"]
+        }
+    ]
+}

@@ -1,30 +1,53 @@
-const Intervals = [ 'root', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', ]
+const Intervals = { 'root': 0, 'second': 1, 'third': 2, 'fourth': 3, 'fifth': 4, 'sixth': 5, 'seventh': 6 }
 
 export function candys() {
     console.log('treak or treat!')
 }
 
-export function majorScale(pattern, tuning, notes) {
-    //  console.log(pattern, tuning, notes)
+export function scale(key, mode, scales) {
+    console.log(key, mode, scales)
+    //console.log(scales['Major'][0].key)
 
-    console.log(Intervals)
 
-    pattern.forEach(root => {
-
-        root[tuning].forEach(note => {
-            let marked_note = Array.prototype.slice.call(document.getElementsByClassName(note))
-
-            marked_note.forEach(majorScale_note => {
-                majorScale_note.classList.add(`${tuning}_major_scale`)
-                Intervals.forEach(interval => {
-                    if (root[tuning].indexOf(note) == Intervals.indexOf(interval)) {
-                        majorScale_note.classList.add(interval)
-                    }
-                })
+    for (let scale in scales) {
+        //console.log(scale)
+        if (mode == scale) {
+            //console.log(scales[scale])
+            scales[scale].forEach(mode => {
+                //console.log(mode, mode['key'])
+                if (key == mode['key']) {
+                    //  console.log(mode, mode['notes'])
+                    tagIntervals(mode['notes'])
+                    return mode
+                }
             })
+        }
+    }
+}
 
-            //console.log(root[tuning].indexOf(note))
-            console.log(root[tuning].indexOf(note))
+function tagIntervals(notes) {
+    //  console.log(notes, Intervals)
+
+    deleteTags() 
+    for (let interval in Intervals) {
+        notes.forEach(note => {
+            //  console.log(notes.indexOf(note), Intervals[interval])
+            if (notes.indexOf(note) == Intervals[interval]) {
+                //  console.log(note, interval)
+                let notes_on_fret = Array.prototype.slice.call(document.getElementsByClassName(note))
+                notes_on_fret.forEach(fret_note => {
+                    fret_note.classList.add(interval)
+                })
+            }
         })
-    });
+    }
+}
+
+function deleteTags() {
+    for (let interval in Intervals) {
+        let toDeleteTags = Array.prototype.slice.call(document.getElementsByClassName(interval))
+        toDeleteTags.forEach(tag => {
+            tag.classList.remove(interval)
+        })
+    }
 }
