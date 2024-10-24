@@ -30,7 +30,7 @@ let scales = null
 
 var ajax = new XMLHttpRequest ()
 
-ajax.open("GET", "../json/sample.json", true)
+ajax.open("GET", "../json/note_scales_en.json", true)
 
 ajax.onreadystatechange = function () {
     if (ajax.readyState == 4 && ajax.status == 200) {

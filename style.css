@@ -80,3 +80,32 @@ td {
 .seventh {
     background-color: #F39C4D; /* warmes Orange */
 }
+
+
+.root {
+    background-color: #1E3A8A; /* mittleres Dunkelblau */
+}
+
+.second {
+    background-color: #2A4CA8;
+}
+
+.third {
+    background-color: #3760C6;
+}
+
+.fourth {
+    background-color: #4880E0;
+}
+
+.fifth {
+    background-color: #5A9AF7;
+}
+
+.sixth {
+    background-color: #7BB3FF;
+}
+
+.seventh {
+    background-color: #A3CEFF; /* Hellblau */
+}
