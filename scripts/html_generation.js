@@ -1,4 +1,5 @@
-import { retagInterval } from "./templates.js"
+let notes_sharp = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
+let notes_flat = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
 
 export function pumpkin() {
     console.log('pumpkin')
@@ -30,8 +31,8 @@ export function genFretboard(string, tuning, notes) {
         } while (repetitions < 2)
     }
 
-export function changeNotation(notation, notes, notes_sharp, notes_flat) {
-    //  console.log(notation, notes, notes_sharp, notes_flat)
+export function changeNotation(notation, notes) {
+    console.log(notation, notes)
 
     let retagNotes = Array()
 
@@ -41,7 +42,7 @@ export function changeNotation(notation, notes, notes_sharp, notes_flat) {
                 //  console.log(note, notes.indexOf(note), notes_sharp[notes.indexOf(note)])
                 let notes_tochange
                 
-                if (note.includes('♭')) {
+                if (note.includes('b')) {
                     retagNotes.push(note)
                     notes_tochange = Array.prototype.slice.call(document.getElementsByClassName(notes_sharp[notes.indexOf(note)]))
                     notes_tochange.forEach(new_note => {
@@ -72,8 +73,6 @@ export function changeNotation(notation, notes, notes_sharp, notes_flat) {
         default:
             break;
     }
-
-    retagInterval(retagNotes)
 }
 
 function tuneString(note, notes) {

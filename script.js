@@ -1,6 +1,8 @@
+//  import aller JS datein für eine zentrale JS datei
 import * as htmlGen from '/scripts/html_generation.js'
 import * as template from '/scripts/templates.js'
 
+//  init aller variablen und konstanten
 const string_1 = document.getElementById('string_1')
 const string_2 = document.getElementById('string_2')
 const string_3 = document.getElementById('string_3')
@@ -20,10 +22,11 @@ let tuning = ['E', 'A', 'D', 'G', 'B', 'E']
 
 let notes
 let notes_sharp = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
-let notes_flat = ['A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭']
+let notes_flat = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
 
 let scales = null
 
+//  ajax call um die daten aus der JSON zu bekommen
 var ajax = new XMLHttpRequest ()
 
 ajax.open("GET", "../json/note_scales_en.json", true)
@@ -48,6 +51,7 @@ function notation (notation) {
     }
 }
 
+//  da ich die JSON daten einmal dauerhaft haben möchte, wird erst der wert verwendet nachdem der AJAX call gelungen ist
 setTimeout(() => {
     //  console.log(scales)
     for (let scale in scales) {

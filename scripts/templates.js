@@ -1,3 +1,5 @@
+import { changeNotation } from "./html_generation.js"
+
 const Intervals = { 'root': 0, 'second': 1, 'third': 2, 'fourth': 3, 'fifth': 4, 'sixth': 5, 'seventh': 6 }
 
 export function candys() {
@@ -25,17 +27,14 @@ export function scale(key, mode, scales) {
     }
 }
 
-export function retagInterval(note) {
-    console.log(note)
-
-}
-
-function compareNotation () {
-    return
-}
-
 function tagIntervals(notes) {
-    //  console.log(notes, Intervals)
+    console.log(notes, Intervals)
+
+    if (notes.some(note => note.includes('#'))) {
+        changeNotation('Sharp', notes)
+    } else if (notes.some(note => note.includes('b'))) {
+        changeNotation('Flat', notes)
+    }
 
     deleteTags() 
     for (let interval in Intervals) {
