@@ -12,19 +12,15 @@ const key = document.getElementById('key')
 const mode = document.getElementById('mode')
 let m_k_change = [key, mode]
 
+let switch_notation = document.getElementById('notation')
 
 let strings = [string_6, string_5, string_4, string_3, string_2, string_1]
 
 let tuning = ['E', 'A', 'D', 'G', 'B', 'E']
 
 let notes
-let notation = 'sharp'
-
-if (notation = 'sharp') {
-    notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
-} else {
-    notes = ['A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭']
-}
+let notes_sharp = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
+let notes_flat = ['A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭']
 
 let scales = null
 
@@ -41,6 +37,16 @@ ajax.onreadystatechange = function () {
 }
 
 ajax.send()
+
+function notation (notation) {
+    //  console.log(notation)
+    if (notation === 'Sharp') {
+        notes = notes_sharp
+    } else {
+        notes = notes_flat
+
+    }
+}
 
 setTimeout(() => {
     //  console.log(scales)
@@ -62,5 +68,12 @@ setTimeout(() => {
 //  htmlGen.genFretboard(strings[0], tuning[0], notes)
 for (let string in strings) {
     //  console.log(strings[string], string, tuning[string], tuning)
-    htmlGen.genFretboard(strings[string], tuning[string], notes)
+    htmlGen.genFretboard(strings[string], tuning[string], notes_sharp)
 }
+
+notation(switch_notation.value)
+switch_notation.addEventListener('change', () => {
+    //  console.log(switch_notation.value)
+    notation(switch_notation.value)
+    htmlGen.changeNotation(switch_notation.value, notes, notes_sharp, notes_flat)
+})

@@ -5,8 +5,8 @@ export function candys() {
 }
 
 export function scale(key, mode, scales) {
-    console.log(key, mode, scales)
-    //console.log(scales['Major'][0].key)
+    //  console.log(key, mode, scales)
+    //  console.log(scales['Major'][0].key)
 
 
     for (let scale in scales) {
@@ -25,6 +25,15 @@ export function scale(key, mode, scales) {
     }
 }
 
+export function retagInterval(note) {
+    console.log(note)
+
+}
+
+function compareNotation () {
+    return
+}
+
 function tagIntervals(notes) {
     //  console.log(notes, Intervals)
 
@@ -35,6 +44,7 @@ function tagIntervals(notes) {
             if (notes.indexOf(note) == Intervals[interval]) {
                 //  console.log(note, interval)
                 let notes_on_fret = Array.prototype.slice.call(document.getElementsByClassName(note))
+                //  console.log(note, notes_on_fret)
                 notes_on_fret.forEach(fret_note => {
                     fret_note.classList.add(interval)
                 })

@@ -1,3 +1,5 @@
+import { retagInterval } from "./templates.js"
+
 export function pumpkin() {
     console.log('pumpkin')
 }
@@ -28,6 +30,51 @@ export function genFretboard(string, tuning, notes) {
         } while (repetitions < 2)
     }
 
+export function changeNotation(notation, notes, notes_sharp, notes_flat) {
+    //  console.log(notation, notes, notes_sharp, notes_flat)
+
+    let retagNotes = Array()
+
+    switch (notation) {
+        case 'Flat':
+            notes.forEach(note => {
+                //  console.log(note, notes.indexOf(note), notes_sharp[notes.indexOf(note)])
+                let notes_tochange
+                
+                if (note.includes('♭')) {
+                    retagNotes.push(note)
+                    notes_tochange = Array.prototype.slice.call(document.getElementsByClassName(notes_sharp[notes.indexOf(note)]))
+                    notes_tochange.forEach(new_note => {
+                        new_note.innerHTML = note
+                        new_note.classList.remove(notes_sharp[notes.indexOf(note)])
+                        new_note.classList.add(note)
+                        
+                    })
+                }
+            })            
+            break;
+        case 'Sharp':
+            notes.forEach(note => {
+                //  console.log(note, notes.indexOf(note), notes_flat[notes.indexOf(note)])
+                let notes_tochange
+                
+                if (note.includes('#')) {
+                    retagNotes.push(note)
+                    notes_tochange = Array.prototype.slice.call(document.getElementsByClassName(notes_flat[notes.indexOf(note)]))
+                    notes_tochange.forEach(new_note => {
+                        new_note.innerHTML = note
+                        new_note.classList.remove(notes_flat[notes.indexOf(note)])
+                        new_note.classList.add(note)
+                    })
+                }
+            })          
+            break;
+        default:
+            break;
+    }
+
+    retagInterval(retagNotes)
+}
 
 function tuneString(note, notes) {
     let  firstHalf = notes.slice(0, notes.indexOf(note))
