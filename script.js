@@ -3,12 +3,14 @@ import * as htmlGen from '/scripts/html_generation.js'
 import * as template from '/scripts/templates.js'
 
 //  init aller variablen und konstanten
+/*
 const string_1 = document.getElementById('string_1')
 const string_2 = document.getElementById('string_2')
 const string_3 = document.getElementById('string_3')
 const string_4 = document.getElementById('string_4')
 const string_5 = document.getElementById('string_5')
 const string_6 = document.getElementById('string_6')
+*/
 
 const key = document.getElementById('key')
 const mode = document.getElementById('mode')
@@ -16,9 +18,13 @@ let m_k_change = [key, mode]
 
 let switch_notation = document.getElementById('notation')
 
-let strings = [string_6, string_5, string_4, string_3, string_2, string_1]
+let strings = Array.prototype.slice.call(document.getElementsByClassName('string'))
 
-let tuning = ['E', 'A', 'D', 'G', 'B', 'E']
+let getTuners = Array.from(document.getElementsByClassName('tuner'))
+let tuning = []
+getTuners.forEach(tuner => {
+    tuning.push(tuner.value)
+})
 
 let notes
 let notes_sharp = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']

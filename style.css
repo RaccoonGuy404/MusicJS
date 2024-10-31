@@ -2,6 +2,10 @@ html {
     background-color: #333333;
 }
 
+a:visited {
+    color: orange;
+}
+
 #mode_key_selection {
     width: max-content;
     margin: auto;
@@ -24,6 +28,7 @@ td {
 
 .tab-0, .tab-3, .tab-5, .tab-7, .tab-9 {
     background-color: #AAAAAA;
+    border: 2px solid yellow;
 }
 
 .root {
