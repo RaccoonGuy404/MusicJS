@@ -67,3 +67,16 @@ export function deleteTags() {
         })
     })
 }
+
+export function get_scale_notes(scales, scale, key) {
+    //  console.log(scales, scale, key)
+
+    //  console.log(scales[scale], typeof scales[scale])
+    for (let checkKey in scales[scale]) {
+        //  console.log(checkKey, scales[scale][checkKey]['name'], scales[scale][checkKey]['key'])
+        if (scales[scale][checkKey]['name'] === scale && scales[scale][checkKey]['key'] === key) {
+            //  console.log(scales[scale][checkKey]['notes'])
+            return scales[scale][checkKey]['notes']
+        }
+    }
+}

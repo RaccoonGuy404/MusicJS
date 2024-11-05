@@ -1,6 +1,13 @@
 let notes_sharp = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
 let notes_flat = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
 
+const major_romes = ['I', 'ii', 'iii', 'IV', 'V', 'vi', 'vii°']
+const minor_romes = ['i', 'ii°', 'III', 'iv', 'v', 'VI', 'VII']
+
+const romes = document.getElementById('romes')
+const chord_table = document.getElementById('chords')
+
+
 export function pumpkin() {
     console.log('pumpkin')
 }
@@ -16,7 +23,14 @@ export function genFretboard(string, tuning, notes) {
     let tuned_notes = tuneString(tuning, notes)
         
     //  repetitions for fretboard length
-    let repetitions = 0
+    let repetitions
+    if (document.title === 'Guitar') {
+        repetitions = 1
+    } else if (document.title === 'Ukulele') {
+        repetitions = 1
+    }
+
+    let cycle = 0
     do  {   
             for(let note in tuned_notes) {
                 let tab = document.createElement('td')
@@ -27,8 +41,8 @@ export function genFretboard(string, tuning, notes) {
 
                 string.appendChild(tab)
                 //  console.log(typeof string.appendChild(tab))
-            } repetitions++
-        } while (repetitions < 2)
+            } cycle++
+        } while (cycle < repetitions)
     }
 
 export function changeNotation(notation, notes) {
@@ -82,6 +96,28 @@ export function changeNotation(notation, notes) {
         default:
             break;
     }
+}
+
+export function genChords(chords) {
+    //  console.log(chords)
+
+    let deleteChords = Array.from(document.getElementsByClassName('chord'))
+    if(deleteChords.length > 0) {
+        console.log(deleteChords)
+        deleteChords.forEach(chord => {
+            chord_table.removeChild(chord)
+        })
+    }
+
+    chords.forEach(chord => {
+        //  console.log(chord)
+        
+        let newTd = document.createElement('td')
+        newTd.classList.add('chord')
+        newTd.innerHTML = chord
+        chord_table.appendChild(newTd)
+    })
+
 }
 
 function tuneString(note, notes) {

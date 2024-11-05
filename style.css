@@ -12,6 +12,12 @@ a:visited {
     margin-top: 2em;
 }
 
+#scale_key {
+    width: max-content;
+    margin: auto;
+    margin-top: 2em;
+}
+
 table {
     margin: auto;
     margin-top: 5em;
@@ -29,6 +35,10 @@ td {
 .tab-0, .tab-3, .tab-5, .tab-7, .tab-9 {
     background-color: #AAAAAA;
     border: 2px solid yellow;
+}
+
+.chord {
+    width: 80px;
 }
 
 .root {

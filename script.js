@@ -1,6 +1,7 @@
 //  import aller JS datein für eine zentrale JS datei
 import * as htmlGen from '/scripts/html_generation.js'
 import * as template from '/scripts/templates.js'
+import * as chord from '/scripts/chords.js'
 
 //  init aller variablen und konstanten
 /*
@@ -14,6 +15,7 @@ const string_6 = document.getElementById('string_6')
 
 const key = document.getElementById('key')
 const mode = document.getElementById('mode')
+
 let m_k_change = [key, mode]
 
 let switch_notation = document.getElementById('notation')
@@ -31,6 +33,8 @@ let notes_sharp = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G
 let notes_flat = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
 
 let scales = null
+
+let scale_notes = []
 
 //  ajax call um die daten aus der JSON zu bekommen
 var ajax = new XMLHttpRequest ()
@@ -64,6 +68,10 @@ setTimeout(() => {
         //  console.log(scale)
     }
 
+    //  console.log(key.value, mode.value, scales)
+    scale_notes = template.get_scale_notes(scales, mode.value, key.value)
+    htmlGen.genChords(chord.steps(scale_notes))
+
     template.scale(key.value, mode.value, scales)
 
     m_k_change.forEach(function (elem) {
@@ -71,6 +79,13 @@ setTimeout(() => {
             //  console.log(key.value, mode.value)
             template.deleteTags()
             template.scale(key.value, mode.value, scales)
+
+            /*  CHORDS  */
+            //  chord.spookTimeOver()
+            //  console.log(key.value, mode.value, scales)
+            template.get_scale_notes(scales, mode.value, key.value)
+            scale_notes = template.get_scale_notes(scales, mode.value, key.value)
+            htmlGen.genChords(chord.steps(scale_notes))
         })
     })
 
