@@ -1,4 +1,79 @@
 {
+
+    "Major_Pentatonic": [
+        {
+            "name": "Major_Pentatonic",
+            "key": "A",
+            "notes": ["A", "B", "C#", "E", "F#"]
+        },
+        {
+            "name": "Major_Pentatonic",
+            "key": "B",
+            "notes": ["B", "C#", "D#", "F#", "G#"]
+        },
+        {
+            "name": "Major_Pentatonic",
+            "key": "C",
+            "notes": ["C", "D", "E", "G", "A"]
+        },
+        {
+            "name": "Major_Pentatonic",
+            "key": "D",
+            "notes": ["D", "E", "F#", "A", "B"]
+        },
+        {
+            "name": "Major_Pentatonic",
+            "key": "E",
+            "notes": ["E", "F#", "G#", "B", "C#"]
+        },
+        {
+            "name": "Major_Pentatonic",
+            "key": "F",
+            "notes": ["F", "G", "A", "C", "D"]
+        },
+        {
+            "name": "Major_Pentatonic",
+            "key": "G",
+            "notes": ["G", "A", "B", "D", "E"]
+        }
+    ],
+    "Minor_Pentatonic": [
+        {
+            "name": "Minor_Pentatonic",
+            "key": "A",
+            "notes": ["A", "C", "D", "E", "G"]
+        },
+        {
+            "name": "Minor_Pentatonic",
+            "key": "B",
+            "notes": ["B", "D", "E", "F#", "A"]
+        },
+        {
+            "name": "Minor_Pentatonic",
+            "key": "C",
+            "notes": ["C", "Eb", "F", "G", "Bb"]
+        },
+        {
+            "name": "Minor_Pentatonic",
+            "key": "D",
+            "notes": ["D", "F", "G", "A", "C"]
+        },
+        {
+            "name": "Minor_Pentatonic",
+            "key": "E",
+            "notes": ["E", "G", "A", "B", "D"]
+        },
+        {
+            "name": "Minor_Pentatonic",
+            "key": "F",
+            "notes": ["F", "Ab", "Bb", "C", "Eb"]
+        },
+        {
+            "name": "Minor_Pentatonic",
+            "key": "G",
+            "notes": ["G", "Bb", "C", "D", "F"]
+        }
+    ],
     "Major": [
         {
             "name": "Major",

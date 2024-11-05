@@ -103,7 +103,7 @@ export function genChords(chords) {
 
     let deleteChords = Array.from(document.getElementsByClassName('chord'))
     if(deleteChords.length > 0) {
-        console.log(deleteChords)
+        //  console.log(deleteChords)
         deleteChords.forEach(chord => {
             chord_table.removeChild(chord)
         })
