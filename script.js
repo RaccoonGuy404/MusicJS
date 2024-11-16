@@ -16,6 +16,8 @@ const string_6 = document.getElementById('string_6')
 const key = document.getElementById('key')
 const mode = document.getElementById('mode')
 
+const list_notes = document.getElementById('notes')
+
 let m_k_change = [key, mode]
 
 let switch_notation = document.getElementById('notation')
@@ -35,6 +37,9 @@ let notes_flat = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab
 let scales = null
 
 let scale_notes = []
+
+//  TODO: den ajax call als promise umschreiben? und dann die letzte ausgewählt scale als cookie speichern
+//  TODO: und in allen anderen script auch immer den cookie al;s global constante nehmen
 
 //  ajax call um die daten aus der JSON zu bekommen
 var ajax = new XMLHttpRequest ()
@@ -59,6 +64,22 @@ function notation (notation) {
         notes = notes_flat
 
     }
+}
+
+function show_notes(notes) {
+
+    let delete_notes = Array.from(document.getElementsByClassName('note'))
+    delete_notes.forEach(note => {
+        note.remove()
+    })
+
+    notes.forEach(note => {
+        let newSpan = document.createElement('span')
+        newSpan.classList.add('note')
+        newSpan.innerHTML = note
+
+        list_notes.appendChild(newSpan)
+    })
 }
 
 //  da ich die JSON daten einmal dauerhaft haben möchte, wird erst der wert verwendet nachdem der AJAX call gelungen ist
@@ -86,8 +107,14 @@ setTimeout(() => {
             template.get_scale_notes(scales, mode.value, key.value)
             scale_notes = template.get_scale_notes(scales, mode.value, key.value)
             htmlGen.genChords(chord.steps(scale_notes))
+
+            console.log(scale_notes)
+            show_notes(scale_notes)
         })
     })
+
+    console.log(scale_notes)
+    show_notes(scale_notes)
 
 }, 200);
 

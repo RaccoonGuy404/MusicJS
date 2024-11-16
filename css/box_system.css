@@ -1,0 +1,79 @@
+html {
+    background-color: #333333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
+a:visited {
+    color: orange;
+}
+
+#mode_key_selection {
+    width: max-content;
+    margin: auto;
+    margin-top: 2em;
+}
+
+#scale_key {
+    width: max-content;
+    margin: auto;
+    margin-top: 2em;
+}
+
+#notes {
+    width: max-content;
+    margin: auto;
+    margin-top: 3em;
+}
+
+.note {
+    background-color: aliceblue;
+    padding: 1em;
+    font-size: x-large;
+}
+
+table {
+    margin: auto;
+    margin-top: 5em;
+    border:1px solid black;
+    table-layout: fixed;
+}
+
+td {
+    background-color: white;
+    border: 1px solid black;
+    width: 60px;
+    padding: 1em;
+}
+
+.chord {
+    width: 80px;
+}
+
+.root, .second, .third, .fourth, .fifth{
+    border: 3px solid red;
+}
+
+.short {
+    background-color: #ff7f50;
+}
+
+.big {
+    background-color: #6495ed;
+}
+
+.overlap {
+    background: linear-gradient(45deg, #ff7f50 30%, #ff9f7f 50%, #6495ed 70%);
+}
+
+.overlap_2 {
+    background: linear-gradient(135deg, #ff7f50 30%, #ff9f7f 50%, #6495ed 70%);
+}
+
+.overlap_3 {
+    background: linear-gradient(225deg, #ff7f50 30%, #ff9f7f 50%, #6495ed 70%);
+}
+
+.overlap_4 {
+    background: linear-gradient(315deg, #ff7f50 30%, #ff9f7f 50%, #6495ed 70%);
+}

@@ -37,7 +37,7 @@ export function genFretboard(string, tuning, notes) {
                 
                 tab.classList.add(tuned_notes[note])                
                 tab.innerHTML = tuned_notes[note]
-                tab.classList.add(string.id, `tab-${note}`)
+                tab.classList.add(string.id, `tab-${note}`, 'fret')
 
                 string.appendChild(tab)
                 //  console.log(typeof string.appendChild(tab))
